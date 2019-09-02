@@ -73,14 +73,12 @@ int main()
                  cin.get();
                  }
                  
-                 
                  while (szStr < 28)
                  {
                         tabProcc[j] += " ";
                         ++szStr;
                  }       
-           
-             }      
+            }      
         }
 	    
         infile >> skip;
