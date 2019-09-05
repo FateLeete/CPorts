@@ -67,18 +67,20 @@ int main()
                  tabProcc[j] = skip;
                  szStr =tabProcc[j].size();
                  
-                 if (szStr > 27)
+                 if (szStr > 34)
                  {
                  cout << "\n\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << skip;
                  cin.get();
                  }
                  
-                 while (szStr < 28)
+                 
+                 while (szStr < 35)
                  {
                         tabProcc[j] += " ";
                         ++szStr;
                  }       
-            }      
+           
+             }      
         }
 	    
         infile >> skip;
@@ -219,7 +221,7 @@ int main()
 	
 	while (change)
 	{
-        cout << ".";  
+        cout << "*";  
 		change = false;
 	
     	for (int p = 0; p < countLines - 1; p++)
@@ -242,7 +244,7 @@ int main()
       
     while (change)
    	{
-        cout << ".";  
+        cout << " * ";  
    		change = false;
    	
        	for (int p = 0; p < countLines - 1; p++)
@@ -265,7 +267,7 @@ int main()
       
     while (change)
     {
-        cout << ".";  
+        cout << " -*- ";  
     	change = false;
     
       	for (int p = 0; p < countLines - 1; p++)
@@ -288,7 +290,7 @@ int main()
       
     while (change)
     {
-        cout << ".";  
+        cout << " *-* ";  
     	change = false;
     	
        	for (int p = 0; p < countLines - 1; p++)
@@ -325,11 +327,12 @@ int main()
     cout << "\nPress ENTER to get Unique IP";
     cout << "\n***********************************************************\n\n";
     
-    int oldi1, oldi2, oldi3, oldi4, cnt;
+    int oldi1, oldi2, oldi3, oldi4, cnt, ipCnt;
     cnt = 1;
+    ipCnt = 0;
     
-    cout << "Proccess                     Counter         IP\n";
-    cout << "***********************************************************\n";
+    cout << "IP COUNTER    Proccess                     Counter         IP\n";
+    cout << "***********************************************************************\n";
     cin.get();
 
     int biggCnt= 1;
@@ -349,7 +352,7 @@ int main()
              
              if ( xx == countLines)
              {
-                 cout << "\n" << tabProcc[xx-1] << "\t" << cnt << "\t" << oldi1 << "." << oldi2 << "." << oldi3 << "." << oldi4;
+                 cout << "\n" << ipCnt << "\t" << tabProcc[xx-1] << "\t" << cnt << "\t" << oldi1 << "." << oldi2 << "." << oldi3 << "." << oldi4;
                  
                  if (cnt > biggCnt)
                  {
@@ -360,14 +363,15 @@ int main()
              }          
         }
         else
-        {
-             cout << "\n" << tabProcc[xx-1] << "\t" << cnt << "\t" << oldi1 << "." << oldi2 << "." << oldi3 << "." << oldi4;
+        {   
+             ++ipCnt;
+             cout << "\n" << ipCnt << "\t" << tabProcc[xx-1] << "\t" << cnt << "\t" << oldi1 << "." << oldi2 << "." << oldi3 << "." << oldi4;
 	         
              if (cnt > biggCnt)
              {
                  biggCnt = cnt;
                  
-                 if (tabProcc[xx-1] == "Unknown                     ")
+                 if (tabProcc[xx-1] == "Unknown                            ")
                  {
                       biggCntProcc = tabProcc[xx - cnt];
                  }
@@ -383,10 +387,10 @@ int main()
         }
     }
 
-    cout << "\n\n********************************************************************************";
+    cout << "\n\n*************************************************************************************";
     cout << "\nThe Most Frequent IP is " << biggIP1 << "." << biggIP2 << "." << biggIP3 << "." << biggIP4; 
     cout << " with the count of " << biggCnt << " from Proccess " << biggCntProcc;  
-    cout << "\n********************************************************************************";
+    cout << "\n*************************************************************************************";
     
     cin.get();                              
 
