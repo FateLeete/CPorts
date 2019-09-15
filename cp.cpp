@@ -34,6 +34,7 @@ int main()
 	int j = 0;
 
     string tabProcc[countLines];
+    int tabSvc[countLines];
 	int tabRem1[countLines];
 	int tabRem2[countLines];
 	int tabRem3[countLines];
@@ -42,12 +43,18 @@ int main()
 	string ip1, ip2, ip3, ip4;
 	int iip1, iip2, iip3, iip4;
 
+    cout << "\n\nVariables allocated :) ";
+    cin.get();
+
+
+
 	for (int k = 0; k < countLines; k++)
 	{
 		tabRem1[k] = 0;
 		tabRem2[k] = 0;
 		tabRem3[k] = 0;
 		tabRem4[k] = 0;
+		tabSvc[k] = 0;
 		tabProcc[k] = "void";
 	}
 
@@ -66,19 +73,20 @@ int main()
             {
                  tabProcc[j] = skip;
                  szStr =tabProcc[j].size();
-                 
+        
                  if (szStr > 34)
                  {
-                 cout << "\n\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << skip;
-                 cin.get();
+                       cout << "\n\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << skip;
+                       cin.get();
                  }
-                 
-                 
+                                  
                  while (szStr < 35)
                  {
                         tabProcc[j] += " ";
                         ++szStr;
                  }       
+           
+                 
            
              }      
         }
@@ -360,12 +368,18 @@ int main()
                      biggCntProcc = tabProcc[xx-1];
                      biggIP1 = oldi1; biggIP2 = oldi2; biggIP3 = oldi3; biggIP4 = oldi4;                              
                  }
-             }          
+             }               
         }
         else
         {   
              ++ipCnt;
              cout << "\n" << ipCnt << "\t" << tabProcc[xx-1] << "\t" << cnt << "\t" << oldi1 << "." << oldi2 << "." << oldi3 << "." << oldi4;
+	         	         	         
+          if ("svchost" == tabProcc[xx-1].substr(0, 7))
+                    {
+                    tabSvc[xx-1] = 1;
+                    }
+                 
 	         
              if (cnt > biggCnt)
              {
@@ -392,7 +406,26 @@ int main()
     cout << " with the count of " << biggCnt << " from Proccess " << biggCntProcc;  
     cout << "\n*************************************************************************************";
     
-    cin.get();                              
+    cin.get();                           
+    
+    cout << "\n\n*************************************************************************************";
+    cout << "\nTable of svchost.exe"; 
+    cout << "\n*************************************************************************************";   
+
+    cin.get();
+   
+    int cnt2 = 1; 
+     
+ 	for (int r = 0; r < countLines; r++)
+	{
+        if ( tabSvc[r] == 1)
+        {
+            cout << "\n" << cnt2 << "\t" << tabProcc[r] << "\t" << tabRem1[r] << "." << tabRem2[r] << "." << tabRem3[r] << "." << tabRem4[r];
+            ++cnt2;        
+        }
+    }
+  
+    cin.get();
 
 	return 0;
 }
