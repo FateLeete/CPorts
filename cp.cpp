@@ -106,7 +106,7 @@ int main()
                         tabProcc[j] += " ";
                         ++szStr;
                  }            
-             }      
+            }      
         }
 	    
         infile >> skip;
@@ -431,25 +431,25 @@ int main()
              ++ipCnt;
              cout << "\n" << ipCnt << "\t" << tabProcc[xx-1] << "\t" << cnt << "\t" << oldi1 << "." << oldi2 << "." << oldi3 << "." << oldi4;
 	         	         	         
-          if ("svchost" == tabProcc[xx-1].substr(0, 7))
-                    {
+             if ("svchost" == tabProcc[xx-1].substr(0, 7))
+             {
                     tabSvc[xx-1] = 1;
-                    }
+             }
              
              if (cnt > biggCnt)
              {
-                 biggCnt = cnt;
-                 
-                 if (tabProcc[xx-1] == "Unknown                            ")
-                 {
-                      biggCntProcc = tabProcc[xx - cnt];
-                 }
-                 else
-                 {
-                      biggCntProcc = tabProcc[xx-1];
-                 }    
-                 
-                 biggIP1 = oldi1; biggIP2 = oldi2; biggIP3 = oldi3; biggIP4 = oldi4;                              
+					biggCnt = cnt;
+					
+					if (tabProcc[xx-1] == "Unknown                            ")
+					{
+						biggCntProcc = tabProcc[xx - cnt];
+					}
+					else
+					{
+						biggCntProcc = tabProcc[xx-1];
+					}    
+					
+					biggIP1 = oldi1; biggIP2 = oldi2; biggIP3 = oldi3; biggIP4 = oldi4;                              
              }     
                 
              cnt = 1;
