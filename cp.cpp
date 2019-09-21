@@ -2,24 +2,29 @@
 #include <fstream>
 #include <cstdlib>
 #include <cstring>
+#include <ctime>
 
 using namespace std;
 
+time_t now;
+char* dt;
+
+void printTime();
 
 int main()
 {
-	ifstream file("cports.log");
+    ifstream file("cports.log");
 
 	int countLines = 0;
 	string line;
 
 	if (file.is_open())
 	{
-		while (!file.eof())
-		{
+	   while (!file.eof())
+	   {
 			getline(file, line);
 			countLines++;
-		}
+       }
 	}
 	file.close();
 
@@ -28,6 +33,24 @@ int main()
 	cout << " * Lines Count in file : " << countLines << " * ";
 
 	cin.get();
+
+    if (countLines > 86668 )
+    {
+        cout << "You have more than 86668.. Wish to proceed ? ";
+                  
+        char ch;
+                   
+        cin >> ch;
+        
+        if (ch == 'n' || ch == 'N')
+        {
+             return 1;
+        } 
+                  
+        cin.ignore();
+        cout << "\n GL ! ";
+        cin.get();
+    }
 
 	string skip;
 
@@ -45,8 +68,6 @@ int main()
 
     cout << "\n\nVariables allocated :) ";
     cin.get();
-
-
 
 	for (int k = 0; k < countLines; k++)
 	{
@@ -84,10 +105,7 @@ int main()
                  {
                         tabProcc[j] += " ";
                         ++szStr;
-                 }       
-           
-                 
-           
+                 }            
              }      
         }
 	    
@@ -223,13 +241,25 @@ int main()
     cout << "\n****************************************\n\n";
     
     cin.get();
-    
+
+    printTime();
+
 	bool change = true;
 	int q;
+	int cp3 = 0;
+
+	cout << " * ";
 	
 	while (change)
 	{
-        cout << "*";  
+	    ++cp3;
+
+	    if (cp3 == 88)
+	    {
+   	        cout << " * ";
+		    cp3 = 0;
+        }
+  
 		change = false;
 	
     	for (int p = 0; p < countLines - 1; p++)
@@ -249,10 +279,18 @@ int main()
     }                       
     
     change = true;
-      
+    cp3 = 0;    
+  
     while (change)
    	{
-        cout << " * ";  
+        ++cp3;
+
+		if (cp3 == 88)
+		{
+        	cout << " * ";
+			cp3 = 0;
+		}
+	  
    		change = false;
    	
        	for (int p = 0; p < countLines - 1; p++)
@@ -272,10 +310,18 @@ int main()
     }      
     
     change = true;
-      
+    cp3 = 0;   
+   
     while (change)
     {
-        cout << " -*- ";  
+        ++cp3;
+
+        if (cp3 == 88)
+	    {
+        	cout << " * ";
+		    cp3 = 0;
+	    }
+	   
     	change = false;
     
       	for (int p = 0; p < countLines - 1; p++)
@@ -293,13 +339,21 @@ int main()
             }                       
         }
     }      
-    
+
     change = true;
+    cp3 = 0;
       
     while (change)
     {
-        cout << " *-* ";  
-    	change = false;
+	    ++cp3;
+
+	    if (cp3 == 88)
+	    {
+            cout << " * ";
+		    cp3 = 0;
+        }
+	  
+        change = false;
     	
        	for (int p = 0; p < countLines - 1; p++)
     	{
@@ -317,6 +371,8 @@ int main()
         }
     }      
     
+    printTime();
+
     cout << "\n\n***********************************************************";
     cout << "\nIPs Sorted ! Press ENTER to Show the sorted IPs ";
     cout << "\n***********************************************************";
@@ -379,8 +435,7 @@ int main()
                     {
                     tabSvc[xx-1] = 1;
                     }
-                 
-	         
+             
              if (cnt > biggCnt)
              {
                  biggCnt = cnt;
@@ -429,3 +484,13 @@ int main()
 
 	return 0;
 }
+
+
+void printTime()
+     {
+           now = time(0);
+   
+           dt = ctime(&now);
+
+           cout << "\nThe local date and time is: " << dt ;
+     }
