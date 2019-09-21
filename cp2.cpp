@@ -26,8 +26,8 @@ int main()
 			countLines++;
 		}
 	}
-
-	file.close();
+	
+    file.close();
 
 	--countLines;
 
@@ -49,7 +49,7 @@ int main()
         
         if (ch == 'n' || ch == 'N')
         {
-             return 1;
+            return 1;
         } 
                   
         cin.ignore();
@@ -93,21 +93,21 @@ int main()
 			
             if (i == 4)
             {
-                 tabProcc[j] = skip;
-                 szStr =tabProcc[j].size();
+                tabProcc[j] = skip;
+                szStr =tabProcc[j].size();
         
-                 if (szStr > 34)
-                 {
-                       cout << "\n\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << skip;
-                       cin.get();
-                 }
+                if (szStr > 34)
+                {
+                    cout << "\n\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << skip;
+                    cin.get();
+                }
                                   
-                 while (szStr < 35)
-                 {
-                        tabProcc[j] += " ";
-                        ++szStr;
-                 }             
-             }      
+                while (szStr < 35)
+                {
+                    tabProcc[j] += " ";
+                    ++szStr;
+                }             
+            }      
         }
 	    
         infile >> skip;
@@ -270,38 +270,38 @@ int main()
 		
 			if (tabRem1[q] <= tabRem1[p] && tabRem2[q] <= tabRem2[p] && tabRem3[q] <= tabRem3[p] && tabRem4[q] < tabRem4[p])
 			{               
-                          // cout << " **** "; 
-                           stempo= tabProcc[p]; tempo1 = tabRem1[p]; tempo2 = tabRem2[p]; tempo3 = tabRem3[p]; tempo4 = tabRem4[p]; 
-                           tabProcc[p] = tabProcc[q]; tabRem1[p] = tabRem1[q]; tabRem2[p] = tabRem2[q]; tabRem3[p] = tabRem3[q]; tabRem4[p] = tabRem4[q];
-                           tabProcc[q]= stempo; tabRem1[q] = tempo1; tabRem2[q] = tempo2; tabRem3[q] = tempo3; tabRem4[q] = tempo4;
-                           change = true;
+                // cout << " **** "; 
+                stempo= tabProcc[p]; tempo1 = tabRem1[p]; tempo2 = tabRem2[p]; tempo3 = tabRem3[p]; tempo4 = tabRem4[p]; 
+                tabProcc[p] = tabProcc[q]; tabRem1[p] = tabRem1[q]; tabRem2[p] = tabRem2[q]; tabRem3[p] = tabRem3[q]; tabRem4[p] = tabRem4[q];
+                tabProcc[q]= stempo; tabRem1[q] = tempo1; tabRem2[q] = tempo2; tabRem3[q] = tempo3; tabRem4[q] = tempo4;
+                change = true;
             }
             else if (tabRem1[q] <= tabRem1[p] && tabRem2[q] <= tabRem2[p] && tabRem3[q] < tabRem3[p])
             { 
-                        //   cout << " -*- ";
-                           stempo= tabProcc[p]; tempo1 = tabRem1[p]; tempo2 = tabRem2[p]; tempo3 = tabRem3[p]; tempo4 = tabRem4[p]; 
-                           tabProcc[p] = tabProcc[q]; tabRem1[p] = tabRem1[q]; tabRem2[p] = tabRem2[q]; tabRem3[p] = tabRem3[q]; tabRem4[p] = tabRem4[q];
-                           tabProcc[q]= stempo; tabRem1[q] = tempo1; tabRem2[q] = tempo2; tabRem3[q] = tempo3; tabRem4[q] = tempo4;
-                           change = true;
+                //   cout << " -*- ";
+                stempo= tabProcc[p]; tempo1 = tabRem1[p]; tempo2 = tabRem2[p]; tempo3 = tabRem3[p]; tempo4 = tabRem4[p]; 
+                tabProcc[p] = tabProcc[q]; tabRem1[p] = tabRem1[q]; tabRem2[p] = tabRem2[q]; tabRem3[p] = tabRem3[q]; tabRem4[p] = tabRem4[q];
+                tabProcc[q]= stempo; tabRem1[q] = tempo1; tabRem2[q] = tempo2; tabRem3[q] = tempo3; tabRem4[q] = tempo4;
+                change = true;
             }
             else if (tabRem1[q] <= tabRem1[p] && tabRem2[q] < tabRem2[p])
             {
-                          // cout << " ** ";
-                           stempo= tabProcc[p]; tempo1 = tabRem1[p]; tempo2 = tabRem2[p]; tempo3 = tabRem3[p]; tempo4 = tabRem4[p]; 
-                           tabProcc[p] = tabProcc[q]; tabRem1[p] = tabRem1[q]; tabRem2[p] = tabRem2[q]; tabRem3[p] = tabRem3[q]; tabRem4[p] = tabRem4[q];
-                           tabProcc[q]= stempo; tabRem1[q] = tempo1; tabRem2[q] = tempo2; tabRem3[q] = tempo3; tabRem4[q] = tempo4;
-                           change = true;
+                // cout << " ** ";
+                stempo= tabProcc[p]; tempo1 = tabRem1[p]; tempo2 = tabRem2[p]; tempo3 = tabRem3[p]; tempo4 = tabRem4[p]; 
+                tabProcc[p] = tabProcc[q]; tabRem1[p] = tabRem1[q]; tabRem2[p] = tabRem2[q]; tabRem3[p] = tabRem3[q]; tabRem4[p] = tabRem4[q];
+                tabProcc[q]= stempo; tabRem1[q] = tempo1; tabRem2[q] = tempo2; tabRem3[q] = tempo3; tabRem4[q] = tempo4;
+                change = true;
             }
             else 
             {
-                           if (tabRem1[q] < tabRem1[p])
-                           {
-                               //     cout << " * ";
-                                    stempo= tabProcc[p]; tempo1 = tabRem1[p]; tempo2 = tabRem2[p]; tempo3 = tabRem3[p]; tempo4 = tabRem4[p]; 
-                                    tabProcc[p] = tabProcc[q]; tabRem1[p] = tabRem1[q]; tabRem2[p] = tabRem2[q]; tabRem3[p] = tabRem3[q]; tabRem4[p] = tabRem4[q];
-                	                tabProcc[q]= stempo; tabRem1[q] = tempo1; tabRem2[q] = tempo2; tabRem3[q] = tempo3; tabRem4[q] = tempo4;
-                                    change = true;                  
-                           }                       
+                if (tabRem1[q] < tabRem1[p])
+                {
+                    //     cout << " * ";
+                    stempo= tabProcc[p]; tempo1 = tabRem1[p]; tempo2 = tabRem2[p]; tempo3 = tabRem3[p]; tempo4 = tabRem4[p]; 
+                    tabProcc[p] = tabProcc[q]; tabRem1[p] = tabRem1[q]; tabRem2[p] = tabRem2[q]; tabRem3[p] = tabRem3[q]; tabRem4[p] = tabRem4[q];
+                    tabProcc[q]= stempo; tabRem1[q] = tempo1; tabRem2[q] = tempo2; tabRem3[q] = tempo3; tabRem4[q] = tempo4;
+                    change = true;                  
+                }                       
             }         
         }
     }
@@ -346,48 +346,47 @@ int main()
       
         if (oldi1 == tabRem1[xx] && oldi2 == tabRem2[xx] && oldi3 == tabRem3[xx] && oldi4 == tabRem4[xx])
         {
-             ++cnt;
+            ++cnt;
              
-             if ( xx == countLines)
-             {
-                 cout << "\n" << ipCnt << "\t" << tabProcc[xx-1] << "\t" << cnt << "\t" << oldi1 << "." << oldi2 << "." << oldi3 << "." << oldi4;
+            if ( xx == countLines)
+            {
+                cout << "\n" << ipCnt << "\t" << tabProcc[xx-1] << "\t" << cnt << "\t" << oldi1 << "." << oldi2 << "." << oldi3 << "." << oldi4;
                  
-                 if (cnt > biggCnt)
-                 {
-                     biggCnt = cnt;
-                     biggCntProcc = tabProcc[xx-1];
-                     biggIP1 = oldi1; biggIP2 = oldi2; biggIP3 = oldi3; biggIP4 = oldi4;                              
-                 }
-             }               
+                if (cnt > biggCnt)
+                {
+                    biggCnt = cnt;
+                    biggCntProcc = tabProcc[xx-1];
+                    biggIP1 = oldi1; biggIP2 = oldi2; biggIP3 = oldi3; biggIP4 = oldi4;                              
+                }
+            }               
         }
         else
         {   
-             ++ipCnt;
-             cout << "\n" << ipCnt << "\t" << tabProcc[xx-1] << "\t" << cnt << "\t" << oldi1 << "." << oldi2 << "." << oldi3 << "." << oldi4;
+            ++ipCnt;
+            cout << "\n" << ipCnt << "\t" << tabProcc[xx-1] << "\t" << cnt << "\t" << oldi1 << "." << oldi2 << "." << oldi3 << "." << oldi4;
 	         	         	         
-          if ("svchost" == tabProcc[xx-1].substr(0, 7))
-                    {
-                    tabSvc[xx-1] = 1;
-                    }
+            if ("svchost" == tabProcc[xx-1].substr(0, 7))
+            {
+                tabSvc[xx-1] = 1;
+            }
+             
+            if (cnt > biggCnt)
+            {
+                biggCnt = cnt;
                  
-	         
-             if (cnt > biggCnt)
-             {
-                 biggCnt = cnt;
+                if (tabProcc[xx-1] == "Unknown                            ")
+                {
+                    biggCntProcc = tabProcc[xx - cnt];
+                }
+                else
+                {
+                    biggCntProcc = tabProcc[xx-1];
+                }    
                  
-                 if (tabProcc[xx-1] == "Unknown                            ")
-                 {
-                      biggCntProcc = tabProcc[xx - cnt];
-                 }
-                 else
-                 {
-                      biggCntProcc = tabProcc[xx-1];
-                 }    
-                 
-                 biggIP1 = oldi1; biggIP2 = oldi2; biggIP3 = oldi3; biggIP4 = oldi4;                              
-             }     
+                biggIP1 = oldi1; biggIP2 = oldi2; biggIP3 = oldi3; biggIP4 = oldi4;                              
+            }     
                 
-             cnt = 1;
+            cnt = 1;
         }
     }
 
@@ -421,11 +420,10 @@ int main()
 }
 
 void printTime()
-     {
-               now = time(0);
+    {
+        now = time(0);
    
-                         // convert now to string form
-               dt = ctime(&now);
+        dt = ctime(&now);
 
-                cout << "\nThe local date and time is: " << dt ;
-     }
+        cout << "\nThe local date and time is: " << dt ;
+    }
