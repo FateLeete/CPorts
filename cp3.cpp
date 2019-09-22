@@ -22,9 +22,9 @@ int main()
     {
 	    while (!file.eof())
 	    {
-        getline(file, line);
-        countLines++;
-		}
+            getline(file, line);
+            countLines++;
+	    }
     }
 	
     file.close();
@@ -61,57 +61,55 @@ int main()
      
     char* tabProcc[countLines];
     int tabSvc[countLines];
-	int tabRem1[countLines];
-	int tabRem2[countLines];
-	int tabRem3[countLines];
-	int tabRem4[countLines];
+    int tabRem1[countLines];
+    int tabRem2[countLines];
+    int tabRem3[countLines];
+    int tabRem4[countLines];
 
-	string ip1, ip2, ip3, ip4;
-	int iip1, iip2, iip3, iip4;
+    string ip1, ip2, ip3, ip4;
+    int iip1, iip2, iip3, iip4;
 
     cout << "\n\nVariables allocated :) ";
     cin.get();
 
-	for (int k = 0; k < countLines; k++)
+    for (int k = 0; k < countLines; k++)
     {
         tabRem1[k] = 0;
-		tabRem2[k] = 0;
-		tabRem3[k] = 0;
-		tabRem4[k] = 0;
-		tabSvc[k] = 0;
-		tabProcc[k] = v;
+	tabRem2[k] = 0;
+	tabRem3[k] = 0;
+	tabRem4[k] = 0;
+	tabSvc[k] = 0;
+	tabProcc[k] = v;
     }
 
     cout << "\n\n UNSORT IPs\n";
     int szStr;
 
-	ifstream infile("cports.log");
+    ifstream infile("cports.log");
   
-    string s; 
-     
-	for (int z =0 ; z < countLines; z++)
+    for (int z =0 ; z < countLines; z++)
 	{
         for (int i = 0; i < 7; i++)
 		{
-            infile >> skip;
+                infile >> skip;
 			
-            if (i == 4)
-            {
-                int diff = skip.size();
+            	if (i == 4)
+            	{
+                	int diff = skip.size();
 
-                char* cSStr = new char[35];
-                strcpy(cSStr, skip.c_str());
+                	char* cSStr = new char[35];
+                	strcpy(cSStr, skip.c_str());
                   
-                for (int ix = diff; ix < 35 ; ix++)
-                {
-                    cSStr[ix] = ' ';
-                    cout << cSStr[ix];
-                }
+                	for (int ix = diff; ix < 35 ; ix++)
+                	{
+                    		cSStr[ix] = ' ';
+                    		cout << cSStr[ix];
+                	}
             
                 cSStr[35] = '\0';
 
                 tabProcc[j] = cSStr;
-            }
+            	}
         }
         
         infile >> skip;
@@ -128,15 +126,15 @@ int main()
     	if (cstr[m] != '\0')
     	{
     	    if (isdigit(cstr[m]))
-    		{
-    		    if (isdigit(cstr[m + 1]))
+    	    {
+    		  if (isdigit(cstr[m + 1]))
     			{
     			    if (isdigit(cstr[m + 2]))
     				{
-                        ip1 = skip.substr(m, 3);
+                                	ip1 = skip.substr(m, 3);
     					m += 4;
     				}
-    				else
+    			    else
     				{
     					ip1 = skip.substr(m, 2);
     					m += 3;
@@ -152,22 +150,22 @@ int main()
     
       	if (cstr[m] != '\0')
         {
-            if (isdigit(cstr[m]))
-    		{
-                if (isdigit(cstr[m + 1]))
+             if (isdigit(cstr[m]))
+    	     {
+                 if (isdigit(cstr[m + 1]))
+    		 {
+    			if (isdigit(cstr[m + 2]))
     			{
-    				if (isdigit(cstr[m + 2]))
-    				{
-    					ip2 = skip.substr(m, 3);
-    					m += 4;
-    				}
-    				else
-    		    	{
-    					ip2 = skip.substr(m, 2);
-    					m += 3;
-    				}
+    				ip2 = skip.substr(m, 3);
+    				m += 4;
     			}
-          		else
+    			else
+    		    	{
+    				ip2 = skip.substr(m, 2);
+    				m += 3;
+    			}
+    		 }
+          	else
     			{
     				ip2 = skip.substr(m, 1);
     				m += +2;
@@ -181,18 +179,18 @@ int main()
     		{
     			if (isdigit(cstr[m + 1]))
     			{
-    	    		if (isdigit(cstr[m + 2]))
-    				{
-    					ip3 = skip.substr(m, 3);
-    					m += 4;
-    				}
-    			    else
-    			    {
-    				    ip3 = skip.substr(m, 2);
-    				    m += 3;
-    			    }
-    		    }
-    		    else
+    	    			if (isdigit(cstr[m + 2]))
+    					{
+    						ip3 = skip.substr(m, 3);
+    						m += 4;
+    					}
+    			    	else
+    			    	{
+    					ip3 = skip.substr(m, 2);
+    				    	m += 3;
+    			    	}
+    		    	}
+    		    	else
     			{
     				ip3 = skip.substr(m, 1);
     				m += 2;
@@ -204,22 +202,22 @@ int main()
     	{
     		if (isdigit(cstr[m]))
     		{
-    	    	if (isdigit(cstr[m + 1]))
-    			{
-    				if (isdigit(cstr[m + 2]))
+    	    		if (isdigit(cstr[m + 1]))
     				{
-    					ip4 = skip.substr(m, 3);
+    					if (isdigit(cstr[m + 2]))
+    					{
+    						ip4 = skip.substr(m, 3);
+    					}
+    		    			else
+    					{
+    						ip4 = skip.substr(m, 2);
+    					}
     				}
-    		    	else
-    				{
-    					ip4 = skip.substr(m, 2);
-    				}
-    			}
-    	    	else
-    			{
+    	    		 else
+    			 {
     				ip4 = skip.substr(m, 1);
-    			}
-		    }
+    			 }
+		}
         }
 
         iip1 = atoi(ip1.c_str());
@@ -249,31 +247,31 @@ int main()
 
     printTime();
     
-	bool change = true;
-	int q;
-	int tempo1, tempo2, tempo3, tempo4;
+    bool change = true;
+    int q;
+    int tempo1, tempo2, tempo3, tempo4;
     char* stempo = "void";
-	int cpt3 = 0;
+    int cpt3 = 0;
 	
-	cout << " * ";
+    cout << " * ";
 	
-	while (change)
-	{
+    while (change)
+    {
         cpt3++;
- 		change = false;
+ 	change = false;
  		
- 		if (cpt3 == 88)
- 		{
+ 	if (cpt3 == 88)
+ 	{
             cout << " * ";
             cpt3 = 0;
         }
 	
     	for (int p = 0; p < countLines - 1; p++)
-		{
+	{
             q = p + 1;
 		
-			if (tabRem1[q] <= tabRem1[p] && tabRem2[q] <= tabRem2[p] && tabRem3[q] <= tabRem3[p] && tabRem4[q] < tabRem4[p])
-			{ 
+	    if (tabRem1[q] <= tabRem1[p] && tabRem2[q] <= tabRem2[p] && tabRem3[q] <= tabRem3[p] && tabRem4[q] < tabRem4[p])
+	    { 
                 stempo= tabProcc[p]; tempo1 = tabRem1[p]; tempo2 = tabRem2[p]; tempo3 = tabRem3[p]; tempo4 = tabRem4[p];
                 tabProcc[p] = tabProcc[q]; tabRem1[p] = tabRem1[q]; tabRem2[p] = tabRem2[q]; tabRem3[p] = tabRem3[q]; tabRem4[p] = tabRem4[q];
                 tabProcc[q]= (char*)(stempo); tabRem1[q] = tempo1; tabRem2[q] = tempo2; tabRem3[q] = tempo3; tabRem4[q] = tempo4;
@@ -316,10 +314,10 @@ int main()
     
     cout << "\n\nSORTED IPs\n";
     
- 	for (int r = 0; r < countLines; r++)
-	{
-		cout << "\n" << r + 1 << "\t" << (char*)(tabProcc[r]) << "\t" << tabRem1[r] << "." << tabRem2[r] << "." << tabRem3[r] << "." << tabRem4[r];
-	}
+    for (int r = 0; r < countLines; r++)
+    {
+	cout << "\n" << r + 1 << "\t" << (char*)(tabProcc[r]) << "\t" << tabRem1[r] << "." << tabRem2[r] << "." << tabRem3[r] << "." << tabRem4[r];
+    }
     
     cout << "\n\n***********************************************************";
     cout << "\nPress ENTER to get Unique IP";
@@ -337,10 +335,10 @@ int main()
     string biggCntProcc;
     int biggIP1, biggIP2, biggIP3, biggIP4;
     
- 	for (int xx = 1; xx <= countLines; xx++)
-	{
+    for (int xx = 1; xx <= countLines; xx++)
+    {
         oldi1 = tabRem1[xx-1];
-        oldi2 = tabRem2[xx-1];
+        oldi02 = tabRem2[xx-1];
         oldi3 = tabRem3[xx-1];
         oldi4 = tabRem4[xx-1];	
       
@@ -408,18 +406,18 @@ int main()
    
     int cnt2 = 1; 
      
- 	for (int r = 0; r < countLines; r++)
+    for (int r = 0; r < countLines; r++)
 	{
-        if ( tabSvc[r] == 1)
-        {
-            cout << "\n" << cnt2 << "\t" << tabProcc[r] << "\t" << tabRem1[r] << "." << tabRem2[r] << "." << tabRem3[r] << "." << tabRem4[r];
-            ++cnt2;        
-        }
-    }
+        	if ( tabSvc[r] == 1)
+        	{
+    			cout << "\n" << cnt2 << "\t" << tabProcc[r] << "\t" << tabRem1[r] << "." << tabRem2[r] << "." << tabRem3[r] << "." << tabRem4[r];
+      			++cnt2;        
+        	}
+    	}
   
     cin.get();
 
-	return 0;
+    return 0;
 }
 
 void printTime()
