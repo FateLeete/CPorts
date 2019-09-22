@@ -338,7 +338,7 @@ int main()
     for (int xx = 1; xx <= countLines; xx++)
     {
         oldi1 = tabRem1[xx-1];
-        oldi02 = tabRem2[xx-1];
+        oldi2 = tabRem2[xx-1];
         oldi3 = tabRem3[xx-1];
         oldi4 = tabRem4[xx-1];	
       
