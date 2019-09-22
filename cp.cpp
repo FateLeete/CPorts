@@ -95,10 +95,11 @@ int main()
                 tabProcc[j] = skip;
                 szStr =tabProcc[j].size();
         
-                if (szStr > 34)
+                if (szStr > 35)
                 {
-                    cout << "\n\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << skip;
+                    cout << "\n\n Process name " << skip << " is too long, press Enter to quit :/ ";
                     cin.get();
+                    return 1;
                 }
                                   
                 while (szStr < 35)
@@ -440,7 +441,7 @@ int main()
             {
                 biggCnt = cnt;
                  
-                if (tabProcc[xx-1] == "Unknown                            ")
+                if (tabProcc[xx-1].substr(0, 7) == "Unknown")
                 {
                     biggCntProcc = tabProcc[xx - cnt];
                 }
