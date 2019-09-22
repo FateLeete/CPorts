@@ -74,7 +74,7 @@ int main()
 
     for (int k = 0; k < countLines; k++)
     {
-        tabRem1[k] = 0;
+    tabRem1[k] = 0;
 	tabRem2[k] = 0;
 	tabRem3[k] = 0;
 	tabRem4[k] = 0;
@@ -97,16 +97,23 @@ int main()
             	{
                 	int diff = skip.size();
 
+                    if (diff > 34)
+                    {
+                    cout << "\n\n Process name too big ( " << skip << " ) Press ENTER to quit :/ ";
+                    cin.get();
+                    return 1;
+                    }
+
                 	char* cSStr = new char[35];
                 	strcpy(cSStr, skip.c_str());
                   
-                	for (int ix = diff; ix < 35 ; ix++)
+                	for (int ix = diff; ix < 34 ; ix++)
                 	{
                     		cSStr[ix] = ' ';
                     		cout << cSStr[ix];
                 	}
             
-                cSStr[35] = '\0';
+                cSStr[34] = '\0';
 
                 tabProcc[j] = cSStr;
             	}
@@ -363,8 +370,8 @@ int main()
             ++ipCnt;
             cout << "\n" << ipCnt << "\t" << tabProcc[xx-1] << "\t" << cnt << "\t" << oldi1 << "." << oldi2 << "." << oldi3 << "." << oldi4;
 	    
-            char* svc = "svchost.exe                        ";
-            char* Ukn = "Unknown                            ";
+            char* svc = "svchost.exe                       ";
+            char* Ukn = "Unknown                           ";
                                        
             if (strcmp(tabProcc[xx-1],svc) == 0)
             {
