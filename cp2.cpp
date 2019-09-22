@@ -94,20 +94,21 @@ int main()
             if (i == 4)
             {
                 tabProcc[j] = skip;
-                szStr =tabProcc[j].size();
-        
-                if (szStr > 34)
+                szStr = tabProcc[j].size();
+
+                if (szStr > 35)
                 {
-                    cout << "\n\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << skip;
+                    cout << "\n\nThe Proccess name " << skip << " is too long, press ENTER to quit :/ ";
                     cin.get();
+                    return 1;
                 }
                                   
                 while (szStr < 35)
                 {
                     tabProcc[j] += " ";
                     ++szStr;
-                }             
-            }      
+                }
+            }
         }
 	    
         infile >> skip;
@@ -374,7 +375,7 @@ int main()
             {
                 biggCnt = cnt;
                  
-                if (tabProcc[xx-1] == "Unknown                            ")
+                if (tabProcc[xx-1].substr(0, 7) == "Unknown")
                 {
                     biggCntProcc = tabProcc[xx - cnt];
                 }
