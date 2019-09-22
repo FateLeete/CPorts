@@ -128,23 +128,23 @@ int main()
     	    if (isdigit(cstr[m]))
     	    {
     		  if (isdigit(cstr[m + 1]))
-    			{
-    			    if (isdigit(cstr[m + 2]))
-    				{
-                                	ip1 = skip.substr(m, 3);
-    					m += 4;
-    				}
-    			    else
-    				{
-    					ip1 = skip.substr(m, 2);
-    					m += 3;
-    				}
+    		  {
+    		  	if (isdigit(cstr[m + 2]))
+			{
+                        	ip1 = skip.substr(m, 3);
+    				m += 4;
     			}
     			else
     			{
-    				ip1 = skip.substr(m, 1);
-    				m += 2;
+    				ip1 = skip.substr(m, 2);
+    				m += 3;
     			}
+    		  }
+    		  else
+    		  {
+    		  	ip1 = skip.substr(m, 1);
+    			m += 2;
+    		  }
             }
         }
     
@@ -165,7 +165,7 @@ int main()
     				m += 3;
     			}
     		 }
-          	else
+             	 else
     			{
     				ip2 = skip.substr(m, 1);
     				m += +2;
@@ -180,10 +180,10 @@ int main()
     			if (isdigit(cstr[m + 1]))
     			{
     	    			if (isdigit(cstr[m + 2]))
-    					{
-    						ip3 = skip.substr(m, 3);
-    						m += 4;
-    					}
+    				{
+    					ip3 = skip.substr(m, 3);
+    					m += 4;
+    				}
     			    	else
     			    	{
     					ip3 = skip.substr(m, 2);
@@ -203,20 +203,20 @@ int main()
     		if (isdigit(cstr[m]))
     		{
     	    		if (isdigit(cstr[m + 1]))
+    			{
+    				if (isdigit(cstr[m + 2]))
     				{
-    					if (isdigit(cstr[m + 2]))
-    					{
-    						ip4 = skip.substr(m, 3);
-    					}
-    		    			else
-    					{
-    						ip4 = skip.substr(m, 2);
-    					}
+    					ip4 = skip.substr(m, 3);
     				}
-    	    		 else
-    			 {
+    		    		else
+    				{
+    					ip4 = skip.substr(m, 2);
+    				}
+    			}
+    	    		else
+    			{
     				ip4 = skip.substr(m, 1);
-    			 }
+    			}
 		}
         }
 
