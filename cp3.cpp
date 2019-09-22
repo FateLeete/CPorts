@@ -166,11 +166,11 @@ int main()
     			}
     		 }
              	 else
-    			{
-    				ip2 = skip.substr(m, 1);
-    				m += +2;
-    			}
-    		}
+    		 {
+    			ip2 = skip.substr(m, 1);
+    			m += +2;
+    		 }
+    	     }
     	}
     
         if (cstr[m] != '\0')
